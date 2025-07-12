@@ -1,25 +1,28 @@
-// backend/server.js
+// backend/server.js (modifié)
 
 const express = require('express');
 const cors = require('cors');
-const pool = require('./config/db.config'); // Notre pool de connexion à la BDD
+const pool = require('./config/db.config');
 
 const app = express();
-const port = process.env.PORT || 3000; // Le port de votre API, par défaut 3000
+const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors()); // Permet les requêtes cross-origin depuis le frontend
-app.use(express.json()); // Permet à Express de parser le corps des requêtes en JSON
+app.use(cors());
+app.use(express.json());
+
+// Importation des routes
+const worksRoutes = require('./routes/works.routes');
+// const chaptersRoutes = require('./routes/chapters.routes'); // Pour plus tard
+
+// Utilisation des routes
+app.use('/api/works', worksRoutes);
+// app.use('/api/works/:work_id/chapters', chaptersRoutes); // Pour plus tard, notez le préfixe différent pour les chapitres
 
 // Route de test simple pour vérifier que le serveur fonctionne
 app.get('/', (req, res) => {
   res.send('API de suivi de lecture en cours d\'exécution !');
 });
-
-// À faire : Importer et utiliser les routes des œuvres et des chapitres
-// Exemple:
-// const worksRoutes = require('./routes/works.routes');
-// app.use('/api/works', worksRoutes);
 
 // Démarrage du serveur
 app.listen(port, () => {
@@ -27,7 +30,7 @@ app.listen(port, () => {
   console.log(`Accédez à http://localhost:${port}`);
 });
 
-// Test de connexion à la base de données (optionnel, pour vérification au démarrage)
+// Test de connexion à la base de données
 pool.query('SELECT NOW()', (err, res) => {
   if (err) {
     console.error('Erreur de connexion à la base de données', err.stack);
