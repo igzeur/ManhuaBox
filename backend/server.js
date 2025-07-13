@@ -13,11 +13,11 @@ app.use(express.json());
 
 // Importation des routes
 const worksRoutes = require('./routes/works.routes');
-// const chaptersRoutes = require('./routes/chapters.routes'); // Pour plus tard
+const chaptersRoutes = require('./routes/chapters.routes'); 
 
 // Utilisation des routes
 app.use('/api/works', worksRoutes);
-// app.use('/api/works/:work_id/chapters', chaptersRoutes); // Pour plus tard, notez le préfixe différent pour les chapitres
+app.use('/api/works/:work_id/chapters', chaptersRoutes); 
 
 // Route de test simple pour vérifier que le serveur fonctionne
 app.get('/', (req, res) => {
