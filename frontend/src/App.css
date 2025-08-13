@@ -1,5 +1,62 @@
 /* frontend/src/App.css */
 
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}
+
+/* Styles pour le header */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.App-header {
+  padding: 1rem;
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.App-header a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Styles pour le bouton d'ajout */
+.add-work-button {
+  background-color: #61dafb;
+  color: #282c34;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-work-button:hover {
+  background-color: #21a1f1;
+}
+
+/* Styles de la page principale */
+main {
+  padding: 1rem 0;
+}
+
+/* Styles pour la liste des œuvres */
 .work-list-container {
   max-width: 800px;
   margin: 2rem auto;
@@ -24,12 +81,23 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.work-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
 .work-image {
   width: 80px;
   height: 120px;
   object-fit: cover;
   margin-right: 1rem;
   border-radius: 4px;
+}
+
+.work-info {
+  text-align: left;
 }
 
 .work-info h3 {
@@ -40,4 +108,278 @@
 .work-info p {
   margin: 0;
   color: #666;
+}
+
+/* Styles pour le formulaire d'ajout */
+.add-work-page-container {
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.work-form-container {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.work-form-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Styles pour la page de détails */
+.work-details-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 2rem;
+  text-align: left;
+}
+
+.work-details-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.work-details-info h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.work-details-info h3 {
+  margin-top: 1.5rem;
+  color: #333;
+}
+
+.work-details-info p {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.chapter-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.chapter-list li {
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+/* frontend/src/App.css */
+
+/* ... (conserver les styles du header, de la liste des œuvres, du formulaire d'ajout, etc.) ... */
+
+/* Nouveaux styles pour la page de détails */
+.work-details-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.work-details-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.work-details-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.work-details-info {
+  flex: 1;
+}
+
+.work-details-info h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.work-details-info h3 {
+  margin-top: 1.5rem;
+  color: #333;
+}
+
+.work-details-info p {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.chapter-management {
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.chapter-management h3 {
+  color: #333;
+}
+
+.chapter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.chapter-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chapter-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.status-message {
+  padding: 0.5rem;
+  background-color: #e2f0e2;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.chapter-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.chapter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.chapter-title {
+  font-style: italic;
+  color: #555;
+}
+
+.chapter-status {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.chapter-status.read {
+  background-color: #28a745;
+}
+
+.chapter-status.unread {
+  background-color: #dc3545;
+}
+
+.delete-chapter-button {
+  margin-left: auto;
+  padding: 0.5rem;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.delete-chapter-button:hover {
+  background-color: #c82333;
+}
+
+/* frontend/src/App.css */
+
+/* ... (conserver les styles existants) ... */
+
+/* Styles pour le bouton "Marquer tout comme lu" */
+.chapter-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mark-all-read-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.mark-all-read-button:hover {
+  background-color: #218838;
 }
