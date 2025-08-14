@@ -512,3 +512,115 @@ button[type="submit"]:hover {
 .pagination-button.active:hover {
   background-color: #0056b3;
 }
+
+/* Styles existants pour le reste de l'application... */
+
+/* ============================ */
+/* MEDIA QUERIES POUR MOBILE */
+/* ============================ */
+
+/* Styles pour les écrans plus petits (téléphones) */
+@media (max-width: 768px) {
+  
+  /* Masquer le bouton d'ajout d'œuvre dans le header sur mobile si vous le souhaitez */
+  .App-header .add-work-button {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  
+  /* Adapter la page d'accueil (liste des œuvres) */
+  .work-list-container h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .filter-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Adapter les éléments de la liste d'œuvres */
+  .work-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0.5rem;
+  }
+  
+  .work-item .work-link {
+    flex-direction: column;
+  }
+  
+  .work-item .work-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+  
+  .work-item .work-info {
+    text-align: center;
+  }
+
+  /* Adapter la page de détails d'une œuvre */
+  .work-details-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .work-details-image {
+    width: 150px;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .work-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Adapter les formulaires */
+  .chapter-form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .chapter-form input,
+  .chapter-form button {
+    width: 100%;
+  }
+  
+  /* Adapter la liste des chapitres */
+  .chapter-list-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .mark-all-read-button {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .chapter-item {
+    font-size: 0.9rem;
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .delete-chapter-button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  /* Adapter les contrôles de pagination */
+  .pagination-controls {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  
+  .pagination-controls button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+}
