@@ -1,7 +1,7 @@
 // frontend/src/components/WorkDetails.js
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const WorkDetails = () => {
   const { work_id } = useParams();
@@ -151,7 +151,7 @@ const WorkDetails = () => {
     }
   };
 
-  // NOUVELLE FONCTION : Marquer tous les chapitres comme lus
+  // Marquer tous les chapitres comme lus
   const handleMarkAllAsRead = async () => {
     if (!window.confirm('Voulez-vous vraiment marquer TOUS les chapitres comme lus ?')) {
       return;
@@ -211,6 +211,9 @@ const WorkDetails = () => {
         <img src={work.image_url} alt={work.title} className="work-details-image" />
         <div className="work-details-info">
           <h2>{work.title}</h2>
+          <div className="work-actions">
+            <Link to={`/works/${work.id}/edit`} className="edit-work-button">Modifier l'œuvre</Link>
+          </div>
           <p>Auteur : {work.author}</p>
           <p>Type : {work.type}</p>
           <p>Résumé : {work.summary}</p>

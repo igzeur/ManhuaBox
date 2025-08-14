@@ -383,3 +383,132 @@ button[type="submit"]:hover {
 .mark-all-read-button:hover {
   background-color: #218838;
 }
+
+/* frontend/src/App.css */
+/* ... (garder les styles existants) ... */
+
+/* Styles pour le bouton de modification sur la page de détails */
+.work-actions {
+  margin-bottom: 1rem;
+}
+
+.edit-work-button {
+  background-color: #ffc107;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.edit-work-button:hover {
+  background-color: #e0a800;
+}
+
+/* Styles pour la page d'édition de l'œuvre */
+.work-edit-page-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.work-edit-page-container h2 {
+  text-align: center;
+}
+
+.work-edit-form {
+  margin-bottom: 1rem;
+}
+
+.delete-work-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.delete-work-button:hover {
+  background-color: #c82333;
+}
+
+/* frontend/src/App.css */
+/* ... (garder les styles existants) ... */
+
+/* Styles pour les contrôles de filtre */
+.filter-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input,
+.type-filter {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  -webkit-appearance: none; /* Pour personnaliser l'apparence sur iOS */
+  -moz-appearance: none;    /* Pour personnaliser l'apparence sur Firefox */
+  appearance: none;
+}
+
+.search-input {
+  flex: 2;
+}
+
+.type-filter {
+  background-color: #fff;
+}
+
+/* frontend/src/App.css */
+/* ... (garder les styles existants) ... */
+
+/* Styles pour la pagination */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.pagination-controls button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-button.active:hover {
+  background-color: #0056b3;
+}

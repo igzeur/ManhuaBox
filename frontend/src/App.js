@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import WorkList from './components/WorkList';
 import WorkDetails from './components/WorkDetails';
-import AddWorkPage from './pages/AddWorkPage'; // <-- Nouvelle importation
+import AddWorkPage from './pages/AddWorkPage';
+import WorkEditPage from './pages/WorkEditPage';
 import './App.css';
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
             />
             <Route path="/works/:work_id" element={<WorkDetails />} />
             <Route path="/add-work" element={<AddWorkPage />} />
+            <Route path="/works/:work_id/edit" element={<WorkEditPage />} />
           </Routes>
         </main>
       </div>
