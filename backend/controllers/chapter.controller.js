@@ -113,13 +113,6 @@ const chapterController = {
 
       const { chapter_number, title, is_read, personal_note_text, personal_note_rating } = req.body;
 
-      // Validation basique des données
-      if (chapter_number !== undefined && (isNaN(chapter_number) || chapter_number <= 0)) {
-        return res.status(400).json({ message: 'Le numéro de chapitre doit être un nombre positif.' });
-      }
-      if (personal_note_rating !== undefined && (isNaN(personal_note_rating) || personal_note_rating < 1 || personal_note_rating > 5)) {
-        return res.status(400).json({ message: 'La note personnelle doit être un nombre entre 1 et 5.' });
-      }
 
       const updatedChapter = await Chapter.updateExistingChapter(workId, chapterId, {
         chapter_number,
