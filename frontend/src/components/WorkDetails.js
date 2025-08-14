@@ -16,14 +16,14 @@ const WorkDetails = () => {
   // Fonction de récupération des données de l'œuvre et des chapitres
   const fetchData = async () => {
     try {
-      const workResponse = await fetch(`/api/works/${work_id}`);
+      const workResponse = await fetch(`${process.env.REACT_APP_API_URL}/works/${work_id}`);
       if (!workResponse.ok) {
         throw new Error(`Erreur lors de la récupération de l'œuvre : ${workResponse.statusText}`);
       }
       const workData = await workResponse.json();
       setWork(workData);
 
-      const chaptersResponse = await fetch(`/api/works/${work_id}/chapters`);
+      const chaptersResponse = await fetch(`${process.env.REACT_APP_API_URL}/works/${work_id}/chapters`);
       if (!chaptersResponse.ok) {
         throw new Error(`Erreur lors de la récupération des chapitres : ${chaptersResponse.statusText}`);
       }
@@ -78,7 +78,7 @@ const WorkDetails = () => {
       }));
 
       const promises = chaptersToAdd.map(chapter => 
-          fetch(`/api/works/${work_id}/chapters`, {
+          fetch(`${process.env.REACT_APP_API_URL}/works/${work_id}/chapters`, {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ const WorkDetails = () => {
   const handleDeleteChapter = async (chapterId) => {
     if (window.confirm('Voulez-vous vraiment supprimer ce chapitre ?')) {
       try {
-        const response = await fetch(`/api/works/${work_id}/chapters/${chapterId}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/works/${work_id}/chapters/${chapterId}`, {
           method: 'DELETE',
         });
 
@@ -131,7 +131,7 @@ const WorkDetails = () => {
   const handleToggleRead = async (chapter) => {
     const updatedChapter = { ...chapter, is_read: !chapter.is_read };
     try {
-      const response = await fetch(`/api/works/${work_id}/chapters/${chapter.id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/works/${work_id}/chapters/${chapter.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ const WorkDetails = () => {
     try {
       const promises = unreadChapters.map(chapter => {
         const updatedChapter = { ...chapter, is_read: true };
-        return fetch(`/api/works/${work_id}/chapters/${chapter.id}`, {
+        return fetch(`${process.env.REACT_APP_API_URL}/works/${work_id}/chapters/${chapter.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

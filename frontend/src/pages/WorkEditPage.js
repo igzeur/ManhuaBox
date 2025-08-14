@@ -22,7 +22,7 @@ const WorkEditPage = () => {
   useEffect(() => {
     const fetchWork = async () => {
       try {
-        const response = await fetch(`/api/works/${work_id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/works/${work_id}`);
         if (!response.ok) {
           throw new Error('Œuvre non trouvée.');
         }
@@ -47,7 +47,7 @@ const WorkEditPage = () => {
     e.preventDefault();
     setStatus('Mise à jour en cours...');
     try {
-      const response = await fetch(`/api/works/${work_id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/works/${work_id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ const WorkEditPage = () => {
   const handleDelete = async () => {
     if (window.confirm('Voulez-vous vraiment supprimer cette œuvre et tous ses chapitres ?')) {
       try {
-        const response = await fetch(`/api/works/${work_id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/works/${work_id}`, {
           method: 'DELETE',
         });
 

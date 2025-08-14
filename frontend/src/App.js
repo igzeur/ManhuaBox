@@ -16,7 +16,7 @@ function App() {
   const fetchWorks = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/api/works');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/works`);
       if (!response.ok) {
         throw new Error(`Erreur HTTP: ${response.status}`);
       }
