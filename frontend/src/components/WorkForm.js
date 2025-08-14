@@ -24,7 +24,7 @@ const WorkForm = ({ onWorkAdded }) => {
     e.preventDefault();
     setStatus('Création en cours...');
     try {
-      const response = await fetch('/api/works', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/works`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
